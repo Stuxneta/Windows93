@@ -1,0 +1,1498 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>WINDOWS 93</title>
+  <meta name="description" content="retro-engineering + uchronia = easter egg">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="/rss" rel="alternate" type="application/rss+xml" title="windows93" />
+  <link rel="stylesheet" href="/kernel/kernel.css?v=1415253443">
+
+  <!--[if lt IE 9]>
+    <script src="/c/sys/lib/html5shiv.js"></script>
+    <script src="/c/sys/lib/aight.js"></script>
+  <![endif]-->
+
+  <!--[if lt IE 8]>
+  <script>alert("Old Internet Explorer detected!!!\n\nJust... update your browser, please...\nDo it for you!\nIf you can't, harass the person who can do it for you")</script>
+  <![endif]-->
+
+  <script>/*
+
+
+                                                     @@@@@@
+                                            @@@@@@@@@@@@@@@@@@@@@@@@
+     @                                  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+    @@    @@                       @@@@ @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+         @@@    @@   @@@@   @@@@ @@@@@@ @@@@@@::::::::::::::::::::@@@@@@@
+              @@@@  @@@@@ @@@@@@ @@@@@@ @:::::::::::::::::::::::::@@@@@@@
+    ,,        @     @@@   @@@@@  @@  @@ ::::::::::::::::::::::::::@@@@@@@
+         ,,,           ,, @   ,, @@@@@@ ::::::::::::::::::::::::::@@@@@@@
+         ,    ,,,,  ,,,,, ,,,,,, @@@@@@ ::::::::@@::::::@@@:::::::@@@@@@@
+              ,,,,  ,,,,, ,,,,,, @@@@@@ :::::::@@@@:::::@@@:::::::@@@@@@@
+    ,,        ,     ,,,   ,,,,,  @@  @@ :::::::@@@@:::::@@@:::::::@@@@@@@
+         ,,,           ,, ,   ,, @@@@@@ :::::::@@@@:::::@@@:::::::@@@@@@@
+         ,    ,,,,  ,,,,, ,,,,,, @@@@@@ ::::::::@@::::::@@::::::::@@@@@@@
+     @        ,,,   ,,,,, ,,,,,, @@@@   ::::::::::::::::::::::::::@@@@@@@
+    @@    @@        ,     ,,,      @@@@ ::@::::::::::::::::::::@::@@@@@@@
+         @@@    @@   @@@@   @@@@ @@@@@@ :::@::::::::::::::::::::::@@@@@@@
+              @@@@  @@@@@ @@@@@@ @@@@@@ ::::@::::::::::::::::@::::@@@@@@@
+    ,,        @     @@@   @@@@@  @@  @@ ::::::@::::::::::::@::::::@@@@@@@
+         ,,,           ,, @   ,, @@@@@@ :::::::::@@@::@@@:::::::::@@@@@@@
+         ,    ,,,,  ,,,,, ,,,,,, @@@@@@ ::::::::::::::::::::::::::@@@@@@@
+     ,        ,,,   ,,,,, ,,,,,, @@@@   ::::::::::::::::::::::::::@@@@@@@
+    ,,    ,,        ,     ,,,      @@@@ ::::::::::::::::::::::::::@@@@@@@
+         ,,,    ,,   ,,,,   ,,,, @@@@@@ ::::::@@@@@@@@@@@@@@@@@@@:@@@@@@@
+              ,,,,  ,,,,, ,,,,,, @@@@@@ :@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+    @@        ,     ,,,   ,,,,,  @@  @@ @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+         @@@           @@ ,   @@ @@@@@@ @@@@@@@@@              @@@@@@@@@@
+         @    @@@@  @@@@@ @@@@@@ @@@@@@ @@                           @@@@
+              @@@   @@@@@ @@@@@@ @@@@
+                    @     @@@
+
+    */
+
+    // namespace
+    [].indexOf||(Array.prototype.indexOf=function(a,b,c){for(c=this.length,b=(c+~~b)%c;b<c&&(!(b in this)||this[b]!==a);b++);return b^c?b:-1;});// https://gist.github.com/atk/1034425
+    $nfo=(function(t) { /*t=this, l=library, g=get context namespace, c=cache, f=filter*/
+      var lib, get=Object.getOwnPropertyNames, cac=get(t);
+      function fil(a,b) {return a.filter(function(i) {return !(b.indexOf(i) > -1);})}
+      function cus() {return fil(get(t), cac.concat(lib))}
+      function nfo() {return {'version': $nfo.version,'custom': cus().sort(), 'library': lib.sort()}}
+      nfo.load = function() {(lib=fil(get(t), cac)).splice(lib.indexOf('$nfo'), 1)}; return nfo
+    })(this); // find Global namespace (thanks : http://stackoverflow.com/a/12044256)
+
+    // version
+    $nfo.version = '1.0';
+    !function() {
+      var i, l, s, v, first = document.getElementsByTagName('script')[0], head = first.parentNode, scripts = [];
+      for (i = 10, l = 20; i <= l; i++) {
+        s = document.createElement("script"); v = parseFloat((i/10).toFixed(1));
+        s.setAttribute('language', 'Javascript' + v); s.innerHTML = '$nfo.version = "' + v + '"';
+        head.insertBefore(s, first); scripts.push(s);}
+      for (i = 0, l = scripts.length; i < l; i++) head.removeChild(scripts[i]);
+    }();
+  </script>
+
+</head>
+<body class="_ui_debug_all ">
+
+<div class="o_shelf o_fullscreen _ef_zombi_anim" id="w93_everything">
+  <div>
+  </div>
+  <div class="o_shelf__content " id="w93_desktop">
+    <div class="" id="w93_background"></div>
+    <div class="" id="w93_icons"></div>
+  </div>
+  <div>
+    <div class="o_box w93_taskbar" id="w93_taskbar">
+      <button type="button" id="w93_start"><img width="16" heigth="16" src="c/sys/ico/16/start.png"><span>Start</span></button>
+      <div id="w93_dock" class="o_box__content ui_window_dock"></div>
+      <div id="w93_notif" class="inset">
+        <a id="w93_feed" target="_blank" href="/rss/"><img src="c/sys/ico/feed.png" alt="rss feed"></a>
+        <span id="w93_clock">16:17</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="w93_terminal" id="w93_terminal"  style="position:absolute;top:0;left:0;right:0;bottom:0;background:#000"></div>
+<iframe id="w93_iframe"></iframe>
+<canvas id="w93_canvas"></canvas>
+
+  <script src="/c/sys/lib/media/howler.js"></script>
+  <script src="/c/sys/lib/localforage/localforage.min.js"></script>
+  <script src="/kernel/polyfill.js"></script>
+  <script>$nfo.load()</script>
+
+  <script src="/kernel/kernel.js?v=1415253444"></script>
+
+<script>
+
+
+/*
+  .dP"Y8 Yb  dP .dP"Y8 888888 888888 8b    d8   dP88  oP"Yb.
+  `Ybo."  YbdP  `Ybo."   88   88__   88b  d88  dP 88  "' dP'
+  o.`Y8b   8P   o.`Y8b   88   88""   88YbdP88 d888888   dP'
+  8bodP'  dP    8bodP'   88   888888 88 YY 88     88  .d8888
+*/
+
+var $exe;
+
+!function(global) { 'use strict';
+  var _42 = {
+    'load': function(opt, fn) {
+      $loader(opt, function() {
+        fn.apply(_42, arguments);
+      });
+    }
+    ,_states:{opened:{}}
+    ,_data: {_tree:{}}
+  }
+  function system42(opt, fn) {
+    if ($io.is.obj(opt) || !opt) {
+      $extend(_42, opt);
+      global['system42']  = $watch(system42, _42);
+    };
+         if (typeof opt == 'string' && fn && typeof fn == 'function') system42.on(opt, fn);
+    else if (typeof opt == 'string' && !fn) {system42.trigger(opt); return _42[opt]}
+    else if (typeof opt == 'function') system42.on('ready', opt);
+    else if (opt instanceof Array && typeof fn == 'function') {
+      system42.on('ready', function() {
+        _42.load(opt, fn);
+      });
+    }
+  }
+  global['system42'] = system42;
+}(window);
+
+
+/*
+  88""Yb  dP"Yb   dP"Yb  888888
+  88__dP dP   Yb dP   Yb   88
+  88""Yb Yb   dP Yb   dP   88
+  88oodP  YbodP   YbodP    88
+*/
+
+// init
+system42({
+  _taskbar: document.getElementById('w93_taskbar'),
+  _desktop: document.getElementById('w93_desktop'),
+  _icons: document.getElementById('w93_icons'),
+  _background: document.getElementById('w93_background'),
+  _everything: document.getElementById('w93_everything'),
+  //canvas: document.getElementById('w93_canvas'),
+  offline: false,
+  debug: !true
+});
+
+system42.on('boot', function(api) {
+
+
+
+  var terminalEl = document.getElementById('w93_terminal');
+
+  if (!this.debug) {
+    terminalEl.classList.add('bootyeah');
+    $cli({cols: 90, prompt:'>', el: terminalEl});
+  } else {
+    $cli({cols: 40, prompt:'>', el: terminalEl});
+    terminalEl.style.display = 'none';
+  }
+
+  $window.config({
+    dest: this._desktop,
+    dock: document.getElementById('w93_dock'),
+    animationIn:  'random',
+    animationOut: 'random'
+  });
+
+  $el(this._icons).on('click', function() {$route('');});
+  $el(this._taskbar).on('click', function() {$route('');});
+
+  // boot info
+  /////////////////////////////////////////////////////////////////////////////
+  // borrowed this from syro2eznzea2xbpi.com ^^
+  $nfo.os = "Unknown OS";
+  $nfo.browser = "Unknown Browser";
+  if (navigator.appVersion.indexOf("Win") != -1) $nfo.os = "Windows";
+  else if (navigator.appVersion.indexOf("Mac") != -1) $nfo.os = "MacOS";
+  else if (navigator.appVersion.indexOf("Linux") != -1) $nfo.os = "Linux";
+  else if (navigator.appVersion.indexOf("X11") != -1) $nfo.os = "UNIX";
+  else if (navigator.appVersion.indexOf("iPhone") != -1) $nfo.os = "iPhone";
+  else if (navigator.appVersion.indexOf("iPod") != -1) $nfo.os = "iPod";
+  else if (navigator.appVersion.indexOf("iPad") != -1) $nfo.os = "iPad";
+  else if (navigator.appVersion.indexOf("Android") != -1) $nfo.os = "Android";
+
+  if (navigator.userAgent.indexOf("MSIE") != -1) $nfo.browser = "msie";
+  else if (navigator.userAgent.indexOf("Firefox") != -1) $nfo.browser = "firefox";
+  else if (navigator.userAgent.indexOf("Chrome") != -1) $nfo.browser = "chrome";
+  else if (navigator.userAgent.indexOf("Safari") != -1) $nfo.browser = "safari";
+  else if (navigator.userAgent.indexOf("Opera") != -1) $nfo.browser = "opera";
+
+  document.documentElement.classList.remove('no-js');
+  document.documentElement.classList.add($nfo.browser);
+
+  $log('windows93 v0.3.2 booting on...');
+  $log.repeat('=');
+  $log($nfo.browser + ' on ' + $nfo.os);
+  $log('JavaScript version : ' + $nfo.version);
+  $log((new Date).toString());
+
+  setTimeout(function() {
+    $log.repeat('=');
+    $log.obj(window.location);
+    setTimeout(function() {
+      $log.repeat('=');
+      $log.obj(window.navigator);
+      $log.repeat('=');
+      setTimeout(function() {
+        $nfo.plugins = [];
+        navigator.plugins.refresh(false);
+        var numPlugins = navigator.plugins.length;
+        for (var i = 0; i < numPlugins; i++) {
+          var plugin = navigator.plugins[i];
+          if (plugin) {
+            $nfo.plugins.push(plugin.name)
+            $log.pad('plugin', plugin.name, '.');
+          }
+        }
+        $log.repeat('=');
+      }, 150);
+    }, 150);
+  }, 150);
+
+  // fake loading
+  /////////////////////////////////////////////////////////////////////////////
+  var bootStatus = 0, bootSound;
+  if (!this.debug) {
+    var w93_iframe = document.getElementById('w93_iframe');
+    w93_iframe.onload = function() {
+      setTimeout(function() {
+        revealDesk();
+      }, 2500);
+    };
+    setTimeout(function() {
+      w93_iframe.style.display = 'block';
+      w93_iframe.src = 'c/sys/boot/splash.html?v=1414142442';
+    }, 1000);
+  }
+
+  function revealDesk() {
+    bootStatus++;
+    if(bootStatus == 2) {
+      var icons = document.querySelectorAll('.icon');
+      $io.arr.all(icons, function(icon) {
+        icon.style.display = 'none';
+      });
+      bootSound.play();
+      setTimeout(function() {
+        terminalEl.style.display = 'none';
+        w93_iframe.style.display = 'none';
+        w93_iframe.src = '';
+        $io.arr.all(icons, function(icon) {
+          setTimeout(function() {
+            icon.style.display = 'inline-block';
+          }, 1000 * Math.random());
+        });
+
+        setTimeout(function() {
+          system42.trigger('ready', this._data, this._data._apps, this._data._tree, this._data._info);
+        }, 1000);
+
+      }, 500);
+    }
+  }
+
+  // true loading
+  /////////////////////////////////////////////////////////////////////////////
+  this.load([
+     '/c/desktop.html?v=1415249287'
+    ,'/c/scanner.json?v=1415063789'
+    ,'/c/apps.js?v=1415249271'
+    ,'/c/mimetypes.js?v=1414963064'
+    ,'/c/sys/boot/boot.ogg?v=1414827613'
+  ],
+  function(deskHtml, ctree, apps, mime, snd) {
+
+    if (!apps) $log.error('Loading error: apps is empty');
+    this._data._apps = apps;
+    this._data._mime = mime;
+    this._data._tree.c = ctree;
+    //this._data._info = {javascript: $nfo()};
+    var api = this;
+
+    this.getFileInfo = function(file) {
+      var ext = $url.getExtention(file);
+      var nfo = this._data._mime[ext] || {};
+      return {ext:ext, icon:(nfo.icon || 'file.png'), mime:(nfo.mime || '')}
+    };
+
+    $io.obj.all(apps, function(item) {
+      if (item.init) item.init.call(api, api._data, api._data._apps, api._data._tree, api._data._info);
+    });
+
+    this._icons.innerHTML = deskHtml;
+    window._data = this._data;
+
+    if (!this.debug) {
+      bootSound = snd;
+      revealDesk();
+    } else {
+      system42.trigger('ready', this._data, this._data._apps, this._data._tree, this._data._info);
+    }
+
+
+  });
+
+});
+system42.trigger('boot');
+
+
+
+/*
+  888888 Yb  dP 88""Yb 88      dP"Yb  88""Yb 888888 88""Yb
+  88__    YbdP  88__dP 88     dP   Yb 88__dP 88__   88__dP
+  88""    dPYb  88"""  88  .o Yb   dP 88"Yb  88""   88"Yb
+  888888 dP  Yb 88     88ood8  YbodP  88  Yb 888888 88  Yb
+*/
+
+system42(function() { 'use strict';
+  var scope = this;
+
+  $el(this._desktop)
+    .on('dblclick touchend', '.ui_explorer--nobrowse .icon', function() {
+      console.log('nono');
+      $exe(this);
+    })
+  ;
+
+  function $explorer(path, opt) {
+
+    if (typeof path == 'object') {
+      opt = path;
+      path = 'c/';
+    }
+
+    var
+      def = {
+         explorer: false
+        ,browse: false
+        ,openNewWindow: true
+        ,onopen: $noop
+        //,onminimize: $noop
+        //,onresize: $noop
+        ,onclose: $noop
+      }
+      ,cfg = $extend(def, opt)
+      ,uid = 0
+      ,instance
+    ;
+
+    if (cfg.explorer || cfg.browse) cfg.openNewWindow = false;
+
+
+    if (!path) path = 'c/';
+    if (path.slice(-1) !== '/') path += '/';
+
+
+    function renderPwd(path) {
+
+      if (path.slice(-1) !== '/') path += '/';
+
+      var dirs = [], files = [],
+        obj = $deref(scope._data._tree, path || 'c', '/')
+      ;
+
+      for (var prop in obj) {
+        if (obj.hasOwnProperty(prop)) {
+          if (typeof obj[prop] == 'string') {
+            files.push(obj[prop])
+          } else if ($io.is.obj(obj[prop]) || $io.is.arr(obj[prop])) {
+            dirs.push(prop)
+          }
+        }
+      }
+
+      var html = '';
+      $io.arr.all(dirs.sort(), function(item, t) {
+        html += '<button type="button" class="icon icon-folder" '
+              + 'data-url="' + path + item + '/" '
+              + '><img src="c/sys/ico/folder.png">'
+              + '<span>'+ item +'</span></button>'
+              ;
+      });
+      $io.arr.all(files.sort(), function(item, t) {
+        var nfo = scope.getFileInfo(item);
+        html += '<button type="button" class="icon icon-file" '
+              + 'data-url="' + path + item + '" '
+              //+ 'data-type="' + o.type + '" '
+              + '><img src="c/sys/ico/'+nfo.icon+'">'
+              + '<span>'+ item +'</span></button>'
+              ;
+      });
+      return html;
+    }
+
+
+    function menuFromFileTree(obj) {
+      var out = [];
+      for (var prop in obj) {
+        if (obj.hasOwnProperty(prop)) {
+          /*if (typeof obj[prop] == 'string') {
+            out.push(obj[prop])
+          } else */if ($io.is.arr(obj[prop])) {
+            out.push({name: prop/*, items: obj[prop].sort()*/})
+          } else if ($io.is.obj(obj[prop])) {
+            out.push({name: prop,
+              items: (function(obj) {
+                return menuFromFileTree(obj)
+              }(obj[prop]))
+            });
+          }
+        }
+      }
+      return out.sort()
+    }
+
+    function selectFile() {
+      selectedFile.value = $el(this).data('url');
+    }
+    function selectFileAndClose() {
+      selectedFile.value = $el(this).data('url');
+      instance.close();
+    }
+    function selectFolder() {
+      var url = $el(this).data('url');
+      console.log(url);
+      go(url);
+    }
+
+    function go(url) {
+      navInput.value = url;
+      folder.innerHTML = renderPwd(url);
+    }
+
+    function clickPrev() {
+      var path = navInput.value;
+      var newPath = path.slice(0,-1).split('/');
+      newPath.pop();
+      path = newPath.join('/');
+      go(path || 'c');
+    }
+
+    function clickGo() {
+      var path = navInput.value;
+      go(path);
+    }
+    function keypressGo(e) {
+      e = e || window.event;
+      if (typeof e.which !== 'number') e.which = e.keyCode; // http://stackoverflow.com/a/4285801
+      if (e.which == 13) {
+        clickGo()
+      }
+    }
+
+    var data = {};
+    data.bodyClass = 'ui_explorer';
+
+
+    if (cfg.browse) {
+      data.title = 'explorer';
+      data.bodyClass += ' ui_explorer--browse';
+      data.btnOk = 'Open';
+      data.btnCancel = 'Cancel';
+
+      var selectedFile = document.createElement('input');
+      selectedFile.type = 'text';
+      selectedFile.value = path;
+
+      data.footer = selectedFile;
+
+    } else {
+      data.title = path;
+      data.bodyClass += ' ui_explorer--nobrowse';
+    }
+
+    if (!cfg.openNewWindow) {
+      var
+         nav = document.createElement('div')
+        ,navInput = document.createElement('input')
+        ,navPrev = document.createElement('button')
+        ,navNext = document.createElement('button')
+        ,navGo = document.createElement('button')
+      ;
+      nav.className = 'ui_explorer__nav';
+
+      navPrev.innerHTML = '<';
+      navPrev.className = 'ui_explorer__nav__prev';
+      navNext.innerHTML = '>';
+      navNext.className = 'ui_explorer__nav__next';
+      navGo.innerHTML = 'Go';
+      navGo.className = 'ui_explorer__nav__go';
+
+      navInput.type = 'text';
+      navInput.value = path;
+      navInput.className = 'ui_explorer__nav__input';
+
+      nav.appendChild(navPrev);
+      //nav.appendChild(navNext);
+      nav.appendChild(navInput);
+      nav.appendChild(navGo);
+      data.afterMenu = nav;
+
+      navPrev.addEventListener('click', clickPrev, false);
+      navGo.addEventListener('click', clickGo, false);
+      navInput.addEventListener('keypress', keypressGo, false);
+    }
+
+    data.onopen = function() {
+      if (cfg.browse) $el(this).on('click', '.icon-file', selectFile);
+      if (cfg.browse) $el(this).on('dblclick touchend', '.icon-file', selectFileAndClose);
+      if (!cfg.openNewWindow) $el(this).on('dblclick touchend', '.icon-folder', selectFolder);
+      cfg.onopen.call(this);
+    }
+    data.onclose = function() {
+      if (cfg.browse) $el(this).off('click', '.icon-file', selectFile);
+      if (cfg.browse) $el(this).off('dblclick touchend', '.icon-file', selectFileAndClose);
+      if (!cfg.openNewWindow) $el(this).off('dblclick touchend', '.icon-folder', selectFolder);
+
+      if (!cfg.openNewWindow) navPrev.removeEventListener('click', clickPrev, false);
+      if (!cfg.openNewWindow) navGo.removeEventListener('click', clickGo, false);
+      navInput.removeEventListener('keypress', keypressGo, false);
+
+      if (cfg.browse) cfg.onclose.call(this, selectedFile.value);
+      else cfg.onclose.call(this);
+    }
+
+    var folder = document.createElement('div');
+    if (cfg.explorer) {
+      data.bodyClass += ' ui_explorer--panes ui_explorer--list';
+      //data.menu = [{name: 'View'}];
+
+      var
+        cont = document.createDocumentFragment(), //document.createElement('div'),
+        tree = document.createElement('div')
+      ;
+      tree.className = 'ui_explorer--panes__tree';
+      folder.className = 'ui_explorer--panes__folder';
+      console.log(scope._data._tree.c);
+      $menu(tree, menuFromFileTree(scope._data._tree.c), {mode: 'tree'});
+      $resize(tree, 'e');
+      folder.innerHTML = renderPwd(path)
+      cont.appendChild(tree);
+      cont.appendChild(folder);
+
+      data.html = cont;
+    } else {
+      data.bodyClass += ' ui_explorer--folder';
+      folder.innerHTML = renderPwd(path);
+      data.html = folder;
+    }
+
+    instance = $window(data);
+
+  }
+
+  window.$explorer = $explorer;
+
+});
+
+
+
+/*
+  Yb    dP  88888
+   Yb  dP      88
+    YbdP   o.  88
+     YP    "bodP'
+*/
+
+system42(function() {
+
+  var scope = this;
+
+  var anim = {
+    'Invert': $loop(function() {
+        scope._everything.classList.toggle('invert');
+      })
+    ,'Tada': $loop(function() {
+        scope._everything.classList.toggle('tada');
+        scope._everything.classList.toggle('animate');
+      },100)
+    ,'Hue': $loop(function() {
+        scope._everything.style.filter = 'hue-rotate('+Math.random()*360+'deg)';
+        scope._everything.style.webkitFilter = 'hue-rotate('+Math.random()*360+'deg)';
+      })
+    ,'Blur': $loop(function() {
+        scope._everything.style.filter = 'blur('+Math.random()*60+'px)';
+        scope._everything.style.webkitFilter = 'blur('+Math.random()*60+'px)';
+      })
+    ,'Saturate': $loop(function() {
+        scope._everything.style.filter = 'saturate('+Math.random()*500+'%)';
+        scope._everything.style.webkitFilter = 'saturate('+Math.random()*500+'%)';
+      })
+    ,'Contrast': $loop(function() {
+        scope._everything.style.filter = 'contrast('+Math.random()*1500+'%)';
+        scope._everything.style.webkitFilter = 'contrast('+Math.random()*1500+'%)';
+      })
+  }
+
+  var poneyMenu = [
+    {name: 'Invert', action: function() {
+      anim['Invert'].toggle();
+    }},
+    {name: 'Tada', action: function() {
+      anim['Tada'].toggle();
+    }},
+    {name: 'Hue', action: function() {
+      anim['Hue'].toggle();
+    }},
+    {name: 'Blur', action: function() {
+      anim['Blur'].toggle();
+    }},
+    {name: 'Saturate', action: function() {
+      anim['Saturate'].toggle();
+    }},
+    {name: 'Contrast', action: function() {
+      anim['Contrast'].toggle();
+    }}
+  ];
+
+  var layout = {
+    'default' : [
+      "f1 f2 f3 f4 f5 f6 f7 f8 f9 f10 f11 f12",
+      "1 2 3 4 5 6 7 8 9 0 backspace",
+      "tab a z e r t y u i o p ^ $",
+      "caps q s d f g h j k l m \u00f9 * enter",
+      "shift < w x c v b n , ; : !",
+      "ctrl alt space"
+    ]
+  }
+
+  var layoutDiv = document.createElement('div');
+  layoutDiv.className = 'vj_layout'
+  var lineDiv = document.createElement('div');
+  var keyDiv = document.createElement('button');
+  function displayLayout(layout) {
+    $io.arr.all(layout, function(line) {
+      var lineD = lineDiv.cloneNode(false);
+      layoutDiv.appendChild(lineD);
+      var keys = line.split(' ');
+      $io.arr.all(keys, function(k) {
+        var kk = keyDiv.cloneNode(false);
+        kk.innerText = k;
+        kk.id = 'vj_key_' + k;
+        lineD.appendChild(kk);
+        kk.addEventListener('focus', function() {
+          current.innerHTML = k;
+          //if (vj_sound[k]) sound.value = vj_sound[k];
+          $io.obj.all(poney, function(item, key) {
+            poneyFill[key](item[k] || '');
+          });
+        }, false);
+      })
+    });
+    return layoutDiv;
+  }
+
+  var ui = document.createElement('div');
+  ui.appendChild(displayLayout(layout['default'])); //'yo';
+
+  var keys = {};
+
+  var
+     vjCombo = document.createElement('div')
+    ,truc = document.createElement('div')
+    ,image = document.createElement('input')
+    ,klass = document.createElement('input')
+    ,js = document.createElement('textarea')
+  ;
+  vjCombo.className = 'vj_truc';
+
+  var poney = {};
+  var poneyFn = {};
+  var poneyFill = {};
+
+  function createSelector(what, fn) {
+    poney[what] = $db({}, 'vj/'+what, function() {return poney[what]});
+    var inp = document.createElement('input');
+    var btn = document.createElement('button');
+    var div = vjCombo.cloneNode(false);
+    inp.placeholder = what;
+    inp.className = 'vj_input' + what;
+    div.appendChild(inp);
+    div.appendChild(btn);
+    btn.innerHTML = 'Import';
+    truc.appendChild(div);
+    btn.addEventListener('click', function() {
+      $explorer('c/sounds', {explorer:true, browse:true, onclose:function(val) {
+        inp.value = val;
+        poney[what][current.innerText] = val;
+        poneyWindow.focus();
+      }});
+    }, false);
+    poneyFn[what] = function(val) {
+      fn(val);
+    }
+    poneyFill[what] = function(val) {
+      inp.value = val;
+    }
+  }
+
+  createSelector('sound', function(item) {
+    $sound(item).play();
+  });
+
+  var current = document.createElement('div');
+  current.className = 'vj_current';
+  ui.appendChild(current);
+  ui.appendChild(truc); //'yo';
+
+
+  function popitup(url) {
+    var newwindow = window.open(url,'vjmonitor','location=0,toolbar=0,menubar=0,directories=0,status=0,height=300,width=500');
+    if (window.focus) {newwindow.focus()}
+    return false;
+  }
+
+  var preview;
+  function vj(fn) {
+    fn(preview);
+  }
+  vj.listen = function(fn) {
+    preview = fn();
+    if (!preview) return;
+    preview.style.background = 'red';
+  }
+  vj.popup = function() {
+    popitup('/vjpreview.html');
+  }
+
+  var poneyWindow = null;
+
+  vj.open = function() {
+    current.innerText = 'Click on a key, then import a sound, then press that key on your keyboard... PONEY PARTY \\m/'
+
+    $window({
+      title:'poney jockey',
+      icon:'c/sys/ico/poney.gif',
+      bodyClass: 'ui_vj',
+      menu: poneyMenu,
+      html: ui,
+      animationIn: false,
+      width: 570,
+      height: 430,
+      onopen: function(el) {
+
+        setTimeout(function() {
+          $error('EPILEPSY WARNING<br>Microsoft VBScript runtime (0x800A01AD)<br> ActiveX component can\'t create object:<br> PONEY JOCKEY (beta version) is opening the gates of hell!');
+        }, 100);
+
+        poneyWindow = el;
+        $key.down(el, function(k) {
+          var keyEleme = document.getElementById('vj_key_' + k);
+          if (keyEleme && !keyEleme.classList.contains('pressed')) {
+            keyEleme.classList.add('pressed');
+            keys[k] = true;
+            $io.obj.all(poney, function(item, key) {
+              if (item[k]) poneyFn[key](item[k]);
+            });
+          };
+          return false;
+        });
+        $key.up(el, function(k) {
+          var keyEleme = document.getElementById('vj_key_' + k);
+          if (keyEleme && keyEleme.classList.contains('pressed')) {
+            keyEleme.classList.remove('pressed');
+            keys[k] = false;
+          };
+          return false;
+        });
+        $key(el, function() {
+          return false;
+        });
+      },
+      onclose: function(el) {
+        $key(function(k) {
+          console.log(k);
+        });
+      }
+    });
+  }
+
+  window.$vj = vj;
+
+});
+
+
+/*
+  88b 88  dP"Yb  888888 888888
+  88Yb88 dP   Yb   88   88__
+  88 Y88 Yb   dP   88   88""
+  88  Y8  YbodP    88   888888
+*/
+
+!function(global) {
+
+  var $note = function(msg) {
+    function getTxt(body) {
+      body.innerHTML = body.innerHTML.replace(/<br>|<div><br><\/div>|<div>/g, '_newline___ktlu_'); // chrome is thinking it's fine to add div and div>br on newline =_=
+      var txt = body.innerText || body.textContent;
+      return $io.str.autolink(txt.replace(/\n|_newline___ktlu_/g, '<br>'));
+    }
+    $window($extend({
+      baseClass: 'ui_note',
+      title: 'Note',
+      html: msg,
+      height: 200,
+      width: 230,
+      img: null,
+      dock: null,
+      maximi: true,
+      resizable: true,
+      onopen: function(el, body) {
+        body.setAttribute('tabindex', '0');
+        body.innerHTML = getTxt(body);
+        body.onblur = function() {
+          body.innerHTML = getTxt(body);
+          body.contentEditable = false;
+        }
+        body.onfocus = function() {
+          body.contentEditable = true;
+        }
+      }
+    }, msg));
+  }
+
+  global.$note = $note;
+
+  //$note('Lorem ipsum dolor sit amet, www.windows93.net consectetur adipisicing elit.\n Adipisci nulla autem et odio! Placeat praesentium quod error maiores quia maxime debitis eum architecto quas et suscipit magnam quae cumque vitae perferendis reprehenderit voluptatum');
+
+}(this);
+
+
+/*
+  88b 88  dP"Yb  888888 88 888888
+  88Yb88 dP   Yb   88   88 88__
+  88 Y88 Yb   dP   88   88 88""
+  88  Y8  YbodP    88   88 88
+*/
+
+!function(global) {
+  //var desk = document.getElementById('w93_desktop');
+
+  function close(el) {
+    el.className = 'ui_notif animated fadeOut';
+    setTimeout(function() {
+      if (el.parentNode) el.parentNode.removeChild(el);
+    }, 500);
+  }
+
+  global.$notif = function(opt, el) {
+    var div = document.createElement('div')
+        ,h1 = document.createElement('h1')
+        ,p = document.createElement('p')
+        ,button = document.createElement('span');
+    div.className = 'ui_notif animated fadeIn';
+    button.innerHTML = '&times;'
+    if (typeof opt == 'string') {
+      opt = {description: opt};
+    }
+    if (opt.title) {
+      h1.innerHTML = opt.title;
+      div.appendChild(h1);
+    }
+    p.innerHTML = opt.description;
+    div.appendChild(p);
+    div.appendChild(button);
+    button.onclick = function() {
+      close(div)
+    }
+    div.onmouseover = function() {
+      clearTimeout(delay);
+    }
+    div.onmouseout = function() {
+      hide()
+    }
+    document.getElementById('w93_desktop').appendChild(div);
+    div.style.zIndex = $maxZ('.ui_menu, .ui_window').num + 1;;
+    if (el) {
+      div.style.bottom = 'auto';
+      div.style.right = 'auto';
+      $pos(div, {
+        my: 'right bottom',
+        at: 'center center',
+        of: el,
+        collision: 'flipfit'
+      });
+    }
+
+    var delay;
+    function hide() {
+      delay = setTimeout(function() {
+        close(div)
+      }, 17000);
+    }
+
+    hide()
+
+  }
+}(this);
+
+
+
+/*
+  888888 Yb  dP 888888
+  88__    YbdP  88__
+  88""    dPYb  88""
+  888888 dP  Yb 888888
+*/
+
+system42(function(_, apps) {
+  var scope = this;
+
+  function openLink(data) {
+    var domain = $url.getDomain(data.url);
+    if (domain && location.hostname != domain) {
+      $url.checkFavicon(data.url, function(ok, fav) {
+        if (ok) data.icon = fav;
+        else if (img) data.icon = img.src;
+        $window(data);
+      });
+    } else {
+
+      if (data.url.slice(-1) === '/') {
+
+        $explorer(data.url);
+
+      } else {
+        var ext = $url.getExtention(data.url);
+        var opener = $exe.getDefaultApp(ext);
+
+        if (opener) opener.call(scope, data);
+        else if (ext || data.url.indexOf('c/') > -1) $window(data);
+      }
+
+    }
+  }
+
+  var bashPipe, bashPipeLenth = 0;
+
+  function valid(cmd) {
+    --bashPipeLenth;
+    if (bashPipeLenth == 0 && bashPipe.length){
+      $route(bashPipe.join('&'));
+      bashPipe.length = 0;
+    } else {
+      $route(cmd);
+    }
+  }
+
+  function $exe(cmd) { 'use strict';
+
+    if (cmd && typeof cmd == 'string' && cmd.indexOf(' | ') != -1) {
+      var cmds = cmd.split(' | ');
+      bashPipe = cmds;
+      bashPipeLenth = cmds.length;
+      $io.arr.each(cmds, function(cmd, i) {
+        setTimeout(function() {
+          $exe(cmd);
+        }, 500*i);
+      });
+      return true;
+    }
+
+    if (cmd) {
+
+      // if cmd is an element
+      if (cmd.nodeType && cmd.nodeType === 1) {
+
+        var data = {};
+        $io.obj.all(cmd.attributes, function(attr) {
+          if (/^data-/.test(attr.name)) {
+            var camelCaseName = attr.name.substr(5).replace(/-(.)/g, function (a, b) {
+              return b.toUpperCase();
+            });
+            data[camelCaseName] = !attr.value && typeof attr.value == 'string' ? true : attr.value;
+          }
+        });
+
+        if (data.fun) {$exe(data.fun); return;}
+        if (data.alert) {$alert(data.alert); return;}
+        if (data.error) {$error(data.error); return;}
+        if (data.confirm) {$confirm(data.confirm); return;}
+        if (data.prompt) {$prompt(data.prompt); return;}
+
+        if (data.url) {
+
+          if (!data.icon) {
+            var img = cmd.getElementsByTagName('img')[0];
+            if (img) data.icon = img.src;
+          };
+          openLink(data);
+
+        }
+
+      } else
+
+      if (apps[cmd] && apps[cmd].exec) {
+        apps[cmd].exec.apply(scope, $slice(arguments));
+        valid(cmd);
+        return true
+      } else {
+        var termArg = cmd.split(' '),
+            firstArg = termArg[0];
+        if (apps[firstArg] && apps[firstArg].exec) {
+
+          // bash 2 javascript params @todo : shortcut ls -l
+          var params = [];
+          var options = {};
+          var currentOption = null;
+          var currentOptionCnt = 0;
+
+          $io.arr.all($slice(termArg), function(item) {
+            if (item.indexOf('--') == 0) {
+              currentOption = item.replace(/^--/, '');
+              options[currentOption] = true;
+              currentOptionCnt = 0;
+            } else if (currentOption) {
+              if (currentOptionCnt == 0) {
+                options[currentOption] = item;
+              } else {
+                options[currentOption] = [options[currentOption], item]
+              }
+              currentOptionCnt++;
+            } else {
+              params.push(item);
+            }
+          });
+
+          if (Object.keys(options).length) params.push(options);
+
+          //apps[firstArg].exec.apply(scope, $slice(termArg));
+          apps[firstArg].exec.apply(scope, params);
+          //console.log('ok');
+          valid(cmd);
+          return true;
+        } else {
+          openLink({url: cmd});
+        }
+      }
+    }
+    return false;
+
+  }
+
+  var defaultApp = {};
+  $io.obj.all(apps, function(app, key) {
+    if (app.filetype) {
+      $io.arr.all(app.filetype, function(type) {
+        defaultApp[type] = app;
+      });
+    }
+  });
+
+  $exe.getDefaultApp = function(ext) {
+    if (defaultApp[ext] && defaultApp[ext].exec) {
+      return defaultApp[ext].exec
+    } else {
+      return null;
+    }
+  }
+
+  window.$exe = $exe;
+
+  // https://developers.google.com/webmasters/ajax-crawling/docs/getting-started
+  var hash = location.hash;
+  if (hash) {
+    hash = decodeURI(hash.replace(/^#!/, '')).split('&');
+    $exe(hash.join(' | '));
+  }
+
+
+  $el(this._desktop)
+    .on('dblclick touchend', '#w93_icons > .icon', function() {
+      $exe(this);
+    })
+  ;
+
+});
+
+/*
+  .dP"Y8 888888    db    88""Yb 888888
+  `Ybo."   88     dPYb   88__dP   88
+  o.`Y8b   88    dP__Yb  88"Yb    88
+  8bodP'   88   dP""""Yb 88  Yb   88
+*/
+
+system42(function() {
+
+  var data = this._data;
+  var scope = this;
+
+  var lastUpdate = {"title":"Achievement unlocked","link":"http:\/\/www.windows93.net\/","pubDate":"Sat, 01 Nov 2014 10:41:55 GMT","description":"\n\n<img align=\"left\" hspace=\"10\" vspace=\"10\" src=\"http:\/\/www.windows93.net\/c\/sys\/ico\/trophy.gif\"\/>More than one million visitors on windows93.net in less than a week, thank you for the hug internet... Let's celebrate that with this RSS news\/updates :)\n\n"};
+
+  //console.log(lastUpdate);
+
+  /*if (lastUpdate) {
+    $notif(lastUpdate, document.getElementById('w93_feed'));
+  }*/
+
+  function menuFromFileTree(obj, path) {
+    var files = [];
+    var dirs = [];
+    for (var prop in obj) {
+      if (obj.hasOwnProperty(prop)) {
+        if (typeof obj[prop] == 'string') {
+          var nfo = scope.getFileInfo(obj[prop]);
+          files.push({name: obj[prop], icon: 'c/sys/ico/'+nfo.icon, action: (function(obj) {
+              return function() {
+                //console.log(path + obj);
+                $exe(path + obj);
+              }
+            }(obj[prop]))
+          });
+        }
+        //else if ($io.is.arr(obj[prop])) {
+        //  out.push({name: prop, items: obj[prop].sort()})
+        //}
+        else if ($io.is.obj(obj[prop]) || $io.is.arr(obj[prop])) {
+          dirs.push({name: prop, icon: 'c/sys/ico/folder.png',
+            items: (function(obj) {
+              return menuFromFileTree(obj, path + prop + '/')
+            }(obj[prop]))
+          });
+        }
+      }
+    }
+    return dirs.sort().concat(files.sort());
+  }
+
+  function menuFromAppsAtlas(obj) {
+    var out = [];
+    for (var prop in obj) {
+      if (obj.hasOwnProperty(prop)) {
+        if (obj[prop] && obj[prop].exec) {
+          out.push({name: prop, icon: 'c/sys/ico/programs.png', action: (function(prop) {
+              return function() {
+                $exe(prop);
+              }
+            }(prop))
+          });
+        }
+      }
+    }
+    return out.sort()
+  }
+
+  var actions = {
+
+     settings : function() {$alert('soon...')}
+    ,find : function() {$alert('<b>Did you know ?</b><br>You can use Find to locate your real father.<br>But I will save you the trouble.<br><b>Windows 93 is your real father.</b>')}
+    ,help : function() {
+      $exe('layer c/programs/clippy/clippy.png')
+    }
+    ,run : function() {$error('There is nowhere you can run')}
+    ,shutdown : function() {document.location.reload(true);}
+  }
+  var startmenu = [
+    {name: 'Programs', icon: 'c/sys/ico/programs.png', items: function() {
+      return menuFromAppsAtlas(data._apps);
+    }},
+    {name: 'Documents', icon: 'c/sys/ico/documents.png', items: function() {
+      //return menuFromFileTree(data._tree.c);
+      return menuFromFileTree(data._tree.c, 'c/');
+    }},
+    //{name: 'Settings', icon: 'c/sys/ico/settings.png', action: actions.settings},
+    {name: 'Find', icon: 'c/sys/ico/find.png', action: actions.find},
+    {name: 'Help', icon: 'c/sys/ico/help.png', action: actions.help},
+    {name: 'Run...', icon: 'c/sys/ico/run.png', action: actions.run},
+    {name: '---'},
+    ///{name: 'Suspend', icon: 'c/sys/ico/16/app.png'},
+    {name: 'Shutdown...', icon: 'c/sys/ico/shutdown.png', action: actions.shutdown}
+  ];
+
+  var desk = document.getElementById('w93_desktop');
+
+  $menu(document.getElementById('w93_start'), startmenu, {mode: 'popup', position: {my:'left bottom', at:'left top', within: desk}});
+
+});
+
+
+
+
+
+
+// clock
+/////////////////////////////////////////////////////////////////////////////////
+// thanks to Alex Schroeder -> http://alexanderschroeder.net/blog/ for this
+
+!function() { 'use strict';
+  var clock = document.getElementById("w93_clock");
+  (function updateClock() {
+    var d = new Date(),
+        h = d.getHours(),
+        m = d.getMinutes();
+    h = ((h < 10) ? "0" : "") + h;
+    m = ((m < 10) ? "0" : "") + m;
+    clock.textContent = h + ":" + m;
+    clock.title = d;
+    setTimeout(updateClock, 1000);
+  })();
+}();
+
+</script>
+
+
+
+<!--
+svg filter experiments
+/////////////////////////////////////////////////////////////////////////////
+-->
+
+<svg id='image' version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+
+    <filter id="ef_zombi_anim" x="0%" y="0%" width="100%" height="100%">
+      <feFlood flood-color="#c3ff00" result="A" />
+      <feColorMatrix type="matrix" in="SourceGraphic" result="B"
+        values=" 1 0 0 0 0
+                 0 0 0 0 0
+                 0 1 1 0 0
+                 1 1 1 0 0" />
+      <feMerge>
+        <feMergeNode in="A" />
+        <feMergeNode in="B" />
+      </feMerge>
+      <feColorMatrix type='hueRotate' values='180'>
+        <animate attributeName='values' attributeType='XML' begin='0s' dur='3s' repeatCount='indefinite' from='0' to='360'/>
+      </feColorMatrix>
+    </filter>
+
+    <filter id='huerotate'>
+      <feColorMatrix type='hueRotate' values='180'>
+        <animate attributeName='values' attributeType='XML' begin='0s' dur='3s' repeatCount='indefinite' from='0' to='360'/>
+      </feColorMatrix>
+    </filter>
+
+    <filter id="ef_zombi" x="0%" y="0%" width="100%" height="100%">
+      <feFlood flood-color="#c3ff00" result="A" />
+      <feColorMatrix type="matrix" in="SourceGraphic" result="B"
+        values=" 1 0 0 0 0
+                 0 0 0 0 0
+                 0 1 1 0 0
+                 1 1 1 0 0" />
+      <feMerge>
+        <feMergeNode in="A" />
+        <feMergeNode in="B" />
+      </feMerge>
+    </filter>
+
+    <filter id="ef_glitch">
+      <feConvolveMatrix order="3" kernelMatrix="1 -1  1 -1 -0.01 -1 1 -1 1" edgeMode="duplicate" result="convo">
+      </feConvolveMatrix>
+    </filter>
+
+    <filter id="ef_spectrum">
+      <feConvolveMatrix filterRes="100 100" style="color-interpolation-filters:sRGB" order="3" kernelMatrix="0 -1 0   -1 4 -1   0 -1 0" preserveAlpha="true" />
+    </filter>
+
+    <filter id="ef_spectrum">
+      <feConvolveMatrix filterRes="100 100" style="color-interpolation-filters:sRGB" order="3" kernelMatrix="0 -1 0   -1 4 -1   0 -1 0" preserveAlpha="true" />
+    </filter>
+
+    <filter id="ef_xray">
+      <feColorMatrix type="luminanceToAlpha" values=""/>
+    </filter>
+
+    <filter id="ef_emboss" >
+      <feColorMatrix type="luminanceToAlpha" values=""/>
+      <feDiffuseLighting diffuseConstant="1" surfaceScale="5" result="feDistantLight">
+      <feDistantLight elevation="28" azimuth="65" /></feDiffuseLighting>
+    </filter>
+
+    <filter id="ef_edge">
+      <!-- <feConvolveMatrix order="3 3" preserveAlpha="true" kernelMatrix="-5 0 0 0 0 0 0 0 5"/> -->
+      <feConvolveMatrix order="3 3" preserveAlpha="true" kernelMatrix="-5 0 0 0 0 0 0 0 5"/>
+    </filter>
+
+    <filter id="noir">
+      <feGaussianBlur stdDeviation="0" />
+      <feComponentTransfer>
+        <feFuncR type="discrete" tableValues="0 .5 1 1" />
+        <feFuncG type="discrete" tableValues="0 .5 1" />
+        <feFuncB type="discrete" tableValues="0" />
+      </feComponentTransfer>
+    </filter>
+
+<!--
+ http://codepen.io/awgreenblatt/pen/Kdsfr
+ -->
+
+   <filter id="EmbossFilter" >
+     <feConvolveMatrix order="5 5"
+       preserveAlpha="true"
+       kernelMatrix="-1 0 0 0 0 0 -2 0 0 0 0 0 3 0 0 0 0 0 0 0 0 0 0 0 0"/>
+   </filter>
+
+   <filter id="SharpenFilter">
+     <feConvolveMatrix order="3 3" preserveAlpha="true" kernelMatrix="0 -1 0 -1 5 -1 0 -1 0"/>
+   </filter>
+
+   <filter id="EdgeDetectFilter">
+     <feConvolveMatrix order="3 3" preserveAlpha="true" kernelMatrix="-5 0 0 0 0 0 0 0 5"/>
+   </filter>
+
+   <filter id="LuminanceMaskFilter">
+     <feColorMatrix type="luminanceToAlpha"/>
+   </filter>
+
+   <filter id="GaussianBlurFilter">
+     <feGaussianBlur stdDeviation="10 1"/>
+   </filter>
+
+   <filter id="GradientMapFilter">
+    <feColorMatrix type="matrix" values="0.2126 0.7152 0.0722 0 0 0.2126 0.7152 0.0722 0 0 0.2126 0.7152 0.0722 0 0 0 0 0 1 0"> </feColorMatrix>
+    <feComponentTransfer >
+       <feFuncR type="table"
+         tableValues="0 1 0 1"/>
+       <feFuncG type="table"
+         tableValues="0 0 0.4 1"/>
+       <feFuncB type="table"
+         tableValues="0 0 .4 1"/>
+    </feComponentTransfer>
+   </filter>
+
+   <filter id="PosterizeFilter">
+     <feComponentTransfer>
+     <feFuncR type="discrete"
+         tableValues="0 0.25 0.5 0.75 1"/>
+     <feFuncG type="discrete"
+         tableValues="0 0.25 0.5 0.75 1"/>
+     <feFuncB type="discrete"
+         tableValues="0 0.25 0.5 0.75 1"/>
+   </feComponentTransfer>
+   </filter>
+
+   <filter id="GrayScaleFilter">
+    <feColorMatrix type="matrix" values="0.2126 0.7152 0.0722 0 0 0.2126 0.7152 0.0722 0 0 0.2126 0.7152 0.0722 0 0 0 0 0 1 0" />
+   </filter>
+
+   <filter id="XRayFilter">
+    <feColorMatrix type="matrix" values="0.2126 0.7152 0.0722 0 0 0.2126 0.7152 0.0722 0 0 0.2126 0.7152 0.0722 0 0 0 0 0 1 0" />
+    <feComponentTransfer >
+       <feFuncR type="table" tableValues="1 0"/>
+       <feFuncG type="table" tableValues="1 0"/>
+       <feFuncB type="table" tableValues="1 0"/>
+    </feComponentTransfer>
+   </filter>
+
+   <filter id="WashoutFilter" filterUnits="objectBoundingBox"
+             x="0%" y="0%" width="100%" height="100%">
+     <feFlood flood-color="#ffffff" flood-opacity="0.5" result="flood"/>
+     <feBlend mode="screen" in2="flood" in="SourceGraphic"/>
+   </filter>
+
+
+<!--
+    <filter id="ef_turbulence">
+      <feTurbulence baseFrequency=".01" type="fractalNoise" numOctaves="3" seed="23" stitchTiles="stitch" />
+    </filter>
+
+    <filter id="bluefill" x="0%" y="0%" width="100%" height="100%">
+      <feFlood flood-color="#c3ff00" result="A" />
+      <feColorMatrix type="matrix" in="SourceGraphic" result="B"
+        values=" 1 0 0 0 0
+                 0 1 0 0 0
+                 0 0 1 0 0
+                 1 1 1 0 0" />
+      <feMerge>
+        <feMergeNode in="A" />
+        <feMergeNode in="B" />
+      </feMerge>
+    </filter>
+
+    <filter id="displacement" x="0%" y="0%" height="100%" width="100%">
+      <feDisplacementMap scale="100" in2="SourceGraphic" xChannelSelector="G" />
+    </filter>
+ -->
+
+  </defs>
+</svg>
+
+<style>
+
+  .ef_zombi_anim {
+    -webkit-filter: url(#ef_zombi_anim);
+    filter: url(#ef_zombi_anim);
+  }
+  /* newnew
+  /////////////////////////////////////////////////////////////////////////////*/
+  .ef_test {
+    -webkit-filter: url(#EmbossFilter);
+    filter: url(#EmbossFilter);
+  }
+
+  .ef_edge {
+    -webkit-filter: url(#ef_edge);
+    filter: url(#ef_edge);
+  }
+  /* new
+  /////////////////////////////////////////////////////////////////////////////*/
+  .ef_zombi {
+    -webkit-filter: url(#ef_zombi);
+    filter: url(#ef_zombi);
+  }
+  .ef_emboss {
+    -webkit-filter: url(#ef_emboss);
+    filter: url(#ef_emboss);
+  }
+  .ef_xray {
+    -webkit-filter: url(#ef_xray);
+    filter: url(#ef_xray);
+  }
+  .ef_turbulence {
+    -webkit-filter: url(#ef_turbulence);
+    filter: url(#ef_turbulence);
+  }
+  .ef_glitch {
+    -webkit-filter: url(#ef_glitch);
+    filter: url(#ef_glitch);
+  }
+  .ef_spectrum {
+    -webkit-filter: url(#ef_spectrum);
+    filter: url(#ef_spectrum);
+  }
+</style>
+<style>
+
+  /*.chrome .ef_xray,
+  .chrome .ef_xray * {
+    animation: initial;
+  }
+
+  .chrome .ef_xray canvas {
+    -webkit-filter: url(#nope);
+    filter: url(#nope);
+  }
+
+
+  .ef_opacity * {
+    color: rgba(255,255,255,0.5) !important;
+    background: rgba(50,50,50,0.3) !important;
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+    box-shadow: 0 none;
+  }
+  .ef_opacity img {
+    -webkit-filter: url(#luminanceToAlpha);
+    filter: url(#luminanceToAlpha);
+  }
+  .ef_opacity iframe {
+    opacity: 0.5;
+    -webkit-filter: invert(100%) grayscale(100%);
+    filter: invert(100%) grayscale(100%);
+  }*/
+
+  /*.chrome .ef_xray {
+    -webkit-filter: url(#nope);
+    filter: url(#nope);
+  }
+
+  .chrome .ef_xray *:not(iframe) {
+    -webkit-filter: url(#luminanceToAlpha);
+    filter: url(#luminanceToAlpha);
+  }
+  .chrome .ef_xray iframe {
+    opacity: 0.5;
+    -webkit-filter: invert(100%) grayscale(100%);
+    filter: invert(100%) grayscale(100%);
+  }*/
+</style>
+
+
+
+  </body>
+</html>
